@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import { Drawer } from 'material-ui';
 
 class SideBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+        }
+    }
     render() {
         return (
-            <div>
-                This is the SideBar Component!!!!
+            <div className="DrawerRoot">
+                
             </div>
         )
     }
 }
+export default SideBar;

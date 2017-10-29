@@ -2,6 +2,7 @@ import Rebase from 're-base';
 import firebase from 'firebase';
 
 const config = {
+    // firebase initialization
     apiKey: "AIzaSyCHsarELtkfnWn965KR4D_doiKV2p8PLwE",
     authDomain: "hiossen-b9d4e.firebaseapp.com",
     databaseURL: "https://hiossen-b9d4e.firebaseio.com",

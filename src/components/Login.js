@@ -60,49 +60,65 @@ class Login extends Component {
             return <Redirect to={from} />
         }
         return (
-            <div className="loginPage" style={styles.loginPage}>
-                <Paper style={{ padding: "25px", height: "200px", width: "450px", border: "solid 10px red" }}>
-                    <img src={require('../images/hiossenLogo.jpg')} alt="HiossenLogo" width="50%" />
-                    <Divider light/>
-                    <TextField 
-                        id="username"
-                        label="Username"
-                        fullWidth
-                        inputRef={ (input) => {this.emailInput = input} }
-                    /><Divider light/>
-                    <TextField 
-                        id="password"
-                        label="Password"
-                        type="password"
-                        fullWidth
-                        inputRef={ (input) => {this.passwordInput = input} }
-                    /><Divider/>
-                    <div className="authButtons" style={styles.authButtons}>
-                        <Button
-                            className="submitButton"
-                            style={{marginRight: '180px'}}
-                            onClick={ (event) => this.authWithEmailPassword(event) }
-                        >
-                            Log in
-                        </Button>
-                        <Button
-                            className="registerButton"
-                            onClick={ () => this.registerUser() }
-                        >
-                            Register
-                        </Button>
-                    </div>
-                </Paper>
+            <div className="loginContainer" style={styles.loginContainer}>
+                <div className="loginPage" style={styles.loginPage}>
+                    <Paper style={styles.paperStyle}>
+                        <img src={require('../images/hiossenLogo.jpg')} alt="HiossenLogo" width="50%" />
+                        <Divider light/>
+                        <TextField 
+                            id="username"
+                            label="Username"
+                            fullWidth
+                            inputRef={ (input) => {this.emailInput = input} }
+                        /><Divider light/>
+                        <TextField 
+                            id="password"
+                            label="Password"
+                            type="password"
+                            fullWidth
+                            inputRef={ (input) => {this.passwordInput = input} }
+                        /><Divider/>
+                        <div className="authButtons" style={styles.authButtons}>
+                            <Button
+                                className="submitButton"
+                                style={{marginRight: '180px'}}
+                                onClick={ (event) => this.authWithEmailPassword(event) }
+                            >
+                                Log in
+                            </Button>
+                            <Button
+                                className="registerButton"
+                                onClick={ () => this.registerUser() }
+                            >
+                                Register
+                            </Button>
+                        </div>
+                    </Paper>
+                </div>
             </div>
         )
     }
 }
 
 const styles = {
-    loginPage : {
+    loginContainer: {
+        position: 'absolute',
         background: '#333333',
-        
-        justifyContent: 'center',
+        height: '100%',
+        width: '100%',
+    },
+    loginPage: {
+        position: 'absolute',
+        width: '100%',
+        marginTop: '15%'
+    },
+    paperStyle: {
+        position: "relative",
+        margin: "0 auto", 
+        padding: "25px", 
+        height: "200px", 
+        width: "450px", 
+        border: "solid 10px red"
     },
 
     logoStyle : {
@@ -112,8 +128,7 @@ const styles = {
 
     authButtons : {
         marginTop : '1em',
-    }
-
+    },
 }
 
 

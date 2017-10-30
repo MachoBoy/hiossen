@@ -18,6 +18,11 @@ class Login extends Component {
         }
         this.authWithEmailPassword = this.authWithEmailPassword.bind(this);
         this.registerUser = this.registerUser.bind(this);
+        this.errorMessage = this.errorMessage.bind(this);
+    }
+
+    errorMessage() {
+        return <Dialog title={"ABC"} content={"DFG"} />
     }
 
     // authentication email and password
@@ -45,7 +50,7 @@ class Login extends Component {
                 }
             })
             .catch((error) => {
-                return <Dialog title={"ABC"} content={"DFG"} />
+                return this.errorMessage;
             })
     };
 

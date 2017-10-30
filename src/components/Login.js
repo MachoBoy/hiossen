@@ -7,7 +7,6 @@ import {
     Divider,
 } from 'material-ui';
 
-import styles from '../styles/Login.css';
 import { app } from './Authentication/base';
 import Dialog from './common/DialogWindow';
 
@@ -21,6 +20,7 @@ class Login extends Component {
         this.registerUser = this.registerUser.bind(this);
     }
 
+    // authentication email and password
     authWithEmailPassword(event) {
         event.preventDefault();
 
@@ -77,7 +77,7 @@ class Login extends Component {
                         fullWidth
                         inputRef={ (input) => {this.passwordInput = input} }
                     /><Divider/>
-                    <div className="authButtons" style={styles.loginButtons}>
+                    <div className="authButtons" style={styles.authButtons}>
                         <Button
                             className="submitButton"
                             style={{marginRight: '180px'}}
@@ -97,5 +97,24 @@ class Login extends Component {
         )
     }
 }
+
+const styles = {
+    loginPage : {
+        background: '#333333',
+        
+        justifyContent: 'center',
+    },
+
+    logoStyle : {
+        width: '50%',
+        height: '50%',
+    },
+
+    authButtons : {
+        marginTop : '1em',
+    }
+
+}
+
 
 export default Login;

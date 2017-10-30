@@ -6,8 +6,10 @@ class Logout extends Component {
     }
     render() {
         return(
-            
-        );
+            <div>
+                GHello
+            </div>
+        )
     }
     
 }

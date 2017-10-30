@@ -1,14 +1,13 @@
-require('babel-polyfill');
+//require('babel-polyfill');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
     entry: [
         'babel-polyfill',
         'react-hot-loader/patch',
-        './src/index.js',
+        path.resolve('src/index.js'),
     ],
 
     output: {
@@ -40,17 +39,17 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './public',
         hot: true,
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        port: 3000,
     },
 
     plugins: [
-        new CleanWebpackPlugin(['public']),
-        new HtmlWebpackPlugin({
-          title: 'Hot Module Replacement'
-        }),
+        // new HtmlWebpackPlugin({
+        //   title: 'Hiossen'
+        // }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
-
 };

@@ -63,7 +63,6 @@ class App extends Component {
 
     render() {
         return (
-            <div>
                 <BrowserRouter>
                     <div>
                         <Route exact path="/" render={(props) => {
@@ -77,7 +76,6 @@ class App extends Component {
                         />
                     </div>
                 </BrowserRouter>
-            </div>
         );
     };
 }
